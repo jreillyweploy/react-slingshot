@@ -1,16 +1,28 @@
 import React from 'react';
+import  PropTypes from 'prop-types';
 import ToDoItem from './ToDoItem';
 
-const ToDoList = () => {
+const ToDoList = (props) => {
   return (
     <div>
-      <ToDoItem>Washing</ToDoItem>
-      <ToDoItem>Dishes</ToDoItem>
-      <ToDoItem>Shopping</ToDoItem>
-      <ToDoItem>Vacuuming</ToDoItem>
-      <ToDoItem>Sleep</ToDoItem>
+      {
+        props.listData.map((listItemData) => {
+          return (
+            <ToDoItem
+              key={listItemData.title}
+              completed={listItemData.completed}
+            >
+              {listItemData.title}
+            </ToDoItem>
+          );
+        })
+      }
     </div>
   );
+};
+
+ToDoList.propTypes = {
+  listData: PropTypes.array.isRequired
 };
 
 export default ToDoList;
