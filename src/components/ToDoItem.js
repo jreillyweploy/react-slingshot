@@ -3,11 +3,18 @@ import PropTypes from 'prop-types';
 import { FormLabel } from '@zendesk/garden-react-components';
 
 const ToDoItem = (props) => (
-  <FormLabel>{props.children}</FormLabel>
+  <div>
+    <FormLabel>{props.children}</FormLabel>
+  </div>
 );
 
 ToDoItem.propTypes = {
-  children: PropTypes.string.isRequired
+  children: PropTypes.string.isRequired,
+  complete: PropTypes.bool.isRequired
+};
+
+ToDoItem.defaultProps = {
+  complete: false
 };
 
 export default ToDoItem;
