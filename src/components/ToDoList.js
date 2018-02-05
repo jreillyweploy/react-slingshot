@@ -3,23 +3,23 @@ import ToDoItem from './ToDoItem';
 
 const ToDoList = () => {
   return (
-    <ul>
-      <li>
+    <div>
+      <div>
         <ToDoItem>Washing</ToDoItem>
-      </li>
-      <li>
+      </div>
+      <div>
         <ToDoItem>Dishes</ToDoItem>
-      </li>
-      <li>
+      </div>
+      <div>
         <ToDoItem>Shopping</ToDoItem>
-      </li>
-      <li>
+      </div>
+      <div>
         <ToDoItem>Vacuuming</ToDoItem>
-      </li>
-      <li>
+      </div>
+      <div>
         <ToDoItem>Sleep</ToDoItem>
-      </li>
-    </ul>
+      </div>
+    </div>
   );
 };
 
