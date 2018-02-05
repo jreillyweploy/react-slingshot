@@ -1,9 +1,13 @@
 import React from 'react';
+import ToDoList from '../ToDoList';
 
 export class ToDoPage extends React.Component {
   render() {
     return (
-      <h1>I am a TODO page</h1>
+      <div>
+        <h1>I am a TODO page</h1>
+        <ToDoList />
+      </div>
     );
   }
 }
