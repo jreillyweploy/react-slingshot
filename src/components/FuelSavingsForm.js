@@ -3,6 +3,7 @@ import {func} from 'prop-types';
 import FuelSavingsResults from './FuelSavingsResults';
 import FuelSavingsTextInput from './FuelSavingsTextInput';
 import {fuelSavings} from '../types';
+import { Button, FormLabel } from '@zendesk/garden-react-components';
 
 const FuelSavingsForm = ({fuelSavings, onSaveClick, onChange}) => (
   <div>
@@ -10,27 +11,27 @@ const FuelSavingsForm = ({fuelSavings, onSaveClick, onChange}) => (
     <table>
       <tbody>
         <tr>
-          <td><label htmlFor="newMpg">New Vehicle MPG</label></td>
+          <td><FormLabel htmlFor="newMpg">New Vehicle MPG</FormLabel></td>
           <td><FuelSavingsTextInput onChange={onChange} name="newMpg" value={fuelSavings.newMpg}/>
           </td>
         </tr>
         <tr>
-          <td><label htmlFor="tradeMpg">Trade-in MPG</label></td>
+          <td><FormLabel htmlFor="tradeMpg">Trade-in MPG</FormLabel></td>
           <td><FuelSavingsTextInput onChange={onChange} name="tradeMpg" value={fuelSavings.tradeMpg}/>
           </td>
         </tr>
         <tr>
-          <td><label htmlFor="newPpg">New Vehicle price per gallon</label></td>
+          <td><FormLabel htmlFor="newPpg">New Vehicle price per gallon</FormLabel></td>
           <td><FuelSavingsTextInput onChange={onChange} name="newPpg" value={fuelSavings.newPpg}/>
           </td>
         </tr>
         <tr>
-          <td><label htmlFor="tradePpg">Trade-in price per gallon</label></td>
+          <td><FormLabel htmlFor="tradePpg">Trade-in price per gallon</FormLabel></td>
           <td><FuelSavingsTextInput onChange={onChange} name="tradePpg" value={fuelSavings.tradePpg}/>
           </td>
         </tr>
         <tr>
-          <td><label htmlFor="milesDriven">Miles Driven</label></td>
+          <td><FormLabel htmlFor="milesDriven">Miles Driven</FormLabel></td>
           <td>
             <FuelSavingsTextInput
               onChange={onChange}
@@ -57,7 +58,7 @@ const FuelSavingsForm = ({fuelSavings, onSaveClick, onChange}) => (
     <hr/>
 
     {fuelSavings.necessaryDataIsProvidedToCalculateSavings && <FuelSavingsResults savings={fuelSavings.savings}/>}
-    <input type="submit" value="Save" onClick={onSaveClick}/>
+    <Button type="default" value="Save" onClick={onSaveClick}>Save</Button>
   </div>
 );
 

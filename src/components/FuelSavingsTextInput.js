@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { TextInput } from '@zendesk/garden-react-components';
 
 const FuelSavingsTextInput = ({name, value, placeholder, onChange}) => {
   return (
-    <input
+    <TextInput
       className="small"
       name={name}
       type="text"

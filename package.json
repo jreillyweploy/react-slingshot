@@ -41,6 +41,8 @@
     "redux-thunk": "2.1.0"
   },
   "devDependencies": {
+    "@zendesk/garden-css-variables": "3.1.0",
+    "@zendesk/garden-react-components": "13.12.2",
     "autoprefixer": "7.1.4",
     "babel-cli": "6.24.1",
     "babel-core": "6.25.0",
@@ -154,7 +156,8 @@
         ],
         "plugins": [
           "transform-react-constant-elements",
-          "transform-react-remove-prop-types"
+          "transform-react-remove-prop-types",
+          "@zendesk/babel-plugin-transform-component-imports"
         ]
       },
       "test": {
