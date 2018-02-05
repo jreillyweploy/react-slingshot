@@ -4,12 +4,10 @@ import { Link } from 'react-router-dom';
 const HomePage = () => {
   return (
     <div>
-      <h1>React Slingshot</h1>
+      <h1>This is a home page</h1>
 
-      <h2>Get Started</h2>
       <ol>
-        <li>Review the <Link to="/fuel-savings">demo app</Link></li>
-        <li>Remove the demo and start coding: npm run remove-demo</li>
+        <li>Go to <Link to="/todo">To do</Link></li>
       </ol>
     </div>
   );
