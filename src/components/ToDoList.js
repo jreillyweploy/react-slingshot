@@ -1,14 +1,24 @@
 import React from 'react';
-import { FormLabel } from '@zendesk/garden-react-components';
+import ToDoItem from './ToDoItem';
 
-export const ToDoList = () => {
+const ToDoList = () => {
   return (
     <ul>
-      <li><FormLabel>Washing</FormLabel></li>
-      <li><FormLabel>Dishes</FormLabel></li>
-      <li><FormLabel>Shopping</FormLabel></li>
-      <li><FormLabel>Vacuuming</FormLabel></li>
-      <li><FormLabel>Sleep</FormLabel></li>
+      <li>
+        <ToDoItem>Washing</ToDoItem>
+      </li>
+      <li>
+        <ToDoItem>Dishes</ToDoItem>
+      </li>
+      <li>
+        <ToDoItem>Shopping</ToDoItem>
+      </li>
+      <li>
+        <ToDoItem>Vacuuming</ToDoItem>
+      </li>
+      <li>
+        <ToDoItem>Sleep</ToDoItem>
+      </li>
     </ul>
   );
 };
