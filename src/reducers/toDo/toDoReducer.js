@@ -1,3 +1,4 @@
+import * as ActionTypes from '../../constants/actionTypes';
 import initialState from './toDoInitialState';
 
 // IMPORTANT: Note that with Redux, state should NEVER be changed.
@@ -7,6 +8,14 @@ import initialState from './toDoInitialState';
 // and update values on the copy.
 export default function toDoReducer(state = initialState, action) {
   switch (action.type) {
+    case ActionTypes.TODO_ITEM_ADD:
+      return [
+        ...state,
+        {
+          title: action.item,
+          completed: false
+        }
+      ];
     default:
       return state;
   }
