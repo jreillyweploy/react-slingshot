@@ -24,7 +24,7 @@ function mapStateToProps(state) {
 }
 
 ToDoPage.propTypes = {
-  toDos: PropTypes.arr.isRequired
+  toDos: PropTypes.array.isRequired
 };
 
 export default connect(
