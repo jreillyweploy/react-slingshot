@@ -8,12 +8,15 @@ const dummyToDoData = [
   { title: 'sleep', completed: true }
 ];
 
-export class ToDoPage extends React.Component {
+class ToDoPage extends React.Component {
   render() {
     return (
       <div>
         <h1>To do list</h1>
-        <ToDoList listData={dummyToDoData} />
+        <ToDoList
+          listData={dummyToDoData}
+          onToDoAdd={(item) => { alert(`item: ${item} added`) }}
+        />
       </div>
     );
   }
