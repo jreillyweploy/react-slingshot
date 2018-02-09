@@ -22,6 +22,7 @@ class ToDoPage extends React.Component {
       <div>
         <h1>To do list</h1>
         <ToDoList
+          loading={this.props.loading}
           listData={this.props.toDos}
           onToDoAdd={this.onToDoAdd}
         />
@@ -32,7 +33,8 @@ class ToDoPage extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    toDos: selectors.getToDoItems(state)
+    toDos: selectors.getToDoItems(state),
+    loading: selectors.toToItemsLoading(state)
   };
 }
 
@@ -44,7 +46,8 @@ function mapDispatchToProps(dispatch) {
 
 ToDoPage.propTypes = {
   toDos: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  loading: PropTypes.bool.isRequired
 };
 
 export default connect(

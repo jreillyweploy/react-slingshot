@@ -1,7 +1,11 @@
 import React from 'react';
 import  PropTypes from 'prop-types';
 import ToDoItem from './ToDoItem';
-import { TextInput, Button } from '@zendesk/garden-react-components';
+import {
+  TextInput,
+  Button,
+  Loader
+} from '@zendesk/garden-react-components';
 
 class ToDoList extends React.Component {
   constructor (props) {
@@ -17,7 +21,9 @@ class ToDoList extends React.Component {
   render = () => {
     return (
       <div>
-        {
+        { this.props.loading
+        ? <Loader size={50}>Help</Loader>
+        :
           this.props.listData.map((listItemData) => {
             return (
               <ToDoItem
@@ -28,7 +34,7 @@ class ToDoList extends React.Component {
               </ToDoItem>
             );
           })
-        }
+      }
         <TextInput
           onChange={(value) => this.setState({ value })}
           placeholder="Add a ToDo"
@@ -47,11 +53,13 @@ class ToDoList extends React.Component {
 
 ToDoList.propTypes = {
   listData: PropTypes.array.isRequired,
-  onToDoAdd: PropTypes.func
+  onToDoAdd: PropTypes.func,
+  loading: PropTypes.bool.isRequired
 };
 
 ToDoList.defaultProps = {
-  onToDoAdd: () => {}
+  onToDoAdd: () => {},
+  loading: false
 };
 
 export default ToDoList;
