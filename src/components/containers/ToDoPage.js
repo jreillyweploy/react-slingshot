@@ -31,7 +31,7 @@ class ToDoPage extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    toDos: state.toDos
+    toDos: state.toDos.items
   };
 }
 
