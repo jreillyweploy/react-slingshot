@@ -9,13 +9,28 @@ import initialState from './toDoInitialState';
 export default function toDoReducer(state = initialState, action) {
   switch (action.type) {
     case ActionTypes.TODO_ITEM_ADD:
-      return [
+      return {
         ...state,
-        {
-          title: action.item,
-          completed: false
-        }
-      ];
+        items: [
+          ...state.items,
+          {
+            title: action.item,
+            completed: false
+          }
+        ]
+      };
+    case ActionTypes.TODO_ITEMS_REQUEST:
+      return {
+        loading: true,
+        items: [
+          ...state.items
+        ]
+      };
+    case ActionTypes.TODO_ITEMS_SUCCESS:
+      return {
+        loading: false,
+        items: [...action.items]
+      };
     default:
       return state;
   }
