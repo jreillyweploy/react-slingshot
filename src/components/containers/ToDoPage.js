@@ -6,6 +6,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 class ToDoPage extends React.Component {
+  componentDidMount () {
+    this.props.actions.fetchToDoItems();
+  }
+
   onToDoAdd = (item) => {
     if (item) {
       this.props.actions.addToDoItem(item);
