@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ToDoList from '../ToDoList';
 import * as actions from '../../actions/toDo/toDoActions';
+import * as selectors from '../../selectors/toDo';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -31,7 +32,7 @@ class ToDoPage extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    toDos: state.toDos.items
+    toDos: selectors.getToDoItems(state)
   };
 }
 
