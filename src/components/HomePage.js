@@ -7,7 +7,7 @@ const HomePage = () => {
       <h1>This is a home page</h1>
 
       <ol>
-        <li>Go to <Link to="/todo">To do</Link></li>
+        <li>Go to <Link to="/about">About page</Link></li>
       </ol>
     </div>
   );
