@@ -15,7 +15,7 @@ describe('Reducers::ToDo', () => {
     };
   };
 
-  it('should set initial state by default', () => {
+  it('3.1 - should set initial state by default', () => {
     const action = { type: 'unknown' };
     const expected = getInitialState();
 
@@ -23,7 +23,7 @@ describe('Reducers::ToDo', () => {
   });
 
   describe('when TODO_ITEM_ADD action is dispatched', () => {
-    it('appends the new item to the store with a completed state of false', () => {
+    it('4.2 - appends the new item to the store with a completed state of false', () => {
       const action = { type: ActionTypes.TODO_ITEM_ADD, item: 'I am some new item' };
       const expected = {
         loading: false,
@@ -42,7 +42,7 @@ describe('Reducers::ToDo', () => {
   });
 
   describe('when TODO_ITEMS_REQUEST action is dispatched', () => {
-    it('sets the loading flag to true', () => {
+    it('5.2 - sets the loading flag to true', () => {
       const action = { type: ActionTypes.TODO_ITEMS_REQUEST };
       const expected = {
         loading: true,
@@ -59,7 +59,7 @@ describe('Reducers::ToDo', () => {
     });
 
     describe('and then TODO_ITEMS_SUCCESS is dispatched', () => {
-      it('overrides the store with the new items and sets the loading flag to false', () => {
+      it('5.2 - overrides the store with the new items and sets the loading flag to false', () => {
         const action = {
           type: ActionTypes.TODO_ITEMS_SUCCESS,
           items: [{ foo: 'bar' }, { fizz: 'buzz' }]

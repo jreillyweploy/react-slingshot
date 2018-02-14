@@ -8,7 +8,7 @@ const dispatch = jest.fn();
 
 describe('Actions', () => {
   describe('#addToDoItem', () => {
-    it('creates an action to add a task', () => {
+    it('4.1 - creates an action to add a task', () => {
       ActionCreators.addToDoItem('shopping')(dispatch);
       const expected = {
         type: ActionTypes.TODO_ITEM_ADD,
@@ -32,7 +32,7 @@ describe('Actions', () => {
         });
     });
 
-    it('dispatches a TODO_ITEMS_REQUEST event', () => {
+    it('5.1 - dispatches a TODO_ITEMS_REQUEST event', () => {
       ActionCreators.fetchToDoItems()(dispatch);
       const expected = { type: ActionTypes.TODO_ITEMS_REQUEST };
 
@@ -40,7 +40,7 @@ describe('Actions', () => {
     });
 
     describe('when the api returns results', () => {
-      it('dispatches the TODO_ITEMS_SUCCESS event', () => {
+      it('5.1 - dispatches the TODO_ITEMS_SUCCESS event', () => {
         ActionCreators.fetchToDoItems()(dispatch);
         const expected = {
           type: ActionTypes.TODO_ITEMS_SUCCESS,
